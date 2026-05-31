@@ -1,0 +1,16 @@
+{
+  "name": "surakshaai",
+  "version": "1.0.0",
+  "description": "SurakshaAI — AI-Driven Early Warning System for Internal & Privileged User Fraud",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && node index.js",
+    "client": "cd client && npm run dev",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "seed": "cd server && node db/seed.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
