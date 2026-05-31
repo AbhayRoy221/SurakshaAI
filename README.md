@@ -7,7 +7,7 @@ This project addresses PS1: AI-Driven Early Warning System for Internal & Privil
 Provide your Streamlit / web app / Colab link here.
 
 🔗 Live Demo: http://localhost:5173
-🎥 Demo Video: [Insert Your YouTube Link Here]
+🎥 Demo Video: [https://youtu.be/sDF5cIUdfrw]
 
 *If no live deployment: Run locally using instructions below.*
 
@@ -104,7 +104,7 @@ List team members and their contributions:
 
 ## Contact
 For any queries about this submission:
-Team Name: GenZPT
-Institute: [VIT,Pune]
-Email: [abhaykroy04@gmail.com]
+• Team Name: GenZPT
+• Institute: [VIT,Pune]
+• Email: [abhaykroy04@gmail.com]
 iDEA 2.0 Phase 2 Submission
