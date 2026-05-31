@@ -105,6 +105,6 @@ List team members and their contributions:
 ## Contact
 For any queries about this submission:
 Team Name: GenZPT
-Institute: [Insert Your College Name Here]
-Email: [Insert Team Contact Email Here]
+Institute: [VIT,Pune]
+Email: [abhaykroy04@gmail.com]
 iDEA 2.0 Phase 2 Submission
