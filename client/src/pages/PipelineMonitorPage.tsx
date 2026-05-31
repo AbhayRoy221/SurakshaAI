@@ -146,8 +146,12 @@ export default function PipelineMonitorPage() {
         apiFetch('/api/pipeline/kafka-topics').catch(() => generateFallbackTopics()),
         apiFetch('/api/pipeline/flink-jobs').catch(() => generateFallbackJobs()),
       ]);
+      const formattedThroughput = (t || []).map((p: any) => ({
+        ...p,
+        time: p.time || (p.timestamp ? new Date(p.timestamp).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : '')
+      }));
       setStatus(s);
-      setThroughput(t);
+      setThroughput(formattedThroughput);
       setTopics(k);
       setJobs(f);
       setLastUpdated(new Date());
@@ -289,10 +293,11 @@ export default function PipelineMonitorPage() {
             <XAxis dataKey="time" tick={{ fill: '#94A3B8', fontSize: 9 }} interval={9} />
             <YAxis yAxisId="left" tick={{ fill: '#94A3B8', fontSize: 10 }} tickFormatter={v => `${(v / 1000).toFixed(0)}k`} />
             <YAxis yAxisId="right" orientation="right" tick={{ fill: '#94A3B8', fontSize: 10 }} unit="ms" />
-            <Tooltip contentStyle={ttStyle} formatter={(value: number, name: string) => {
-              if (name === 'eventsPerSec') return [fmtNum(value), 'Events/sec'];
-              if (name === 'latencyMs') return [`${value.toFixed(1)} ms`, 'Latency'];
-              return [value, name];
+            <Tooltip contentStyle={ttStyle} formatter={(value: any, name: any) => {
+              const numVal = Number(value || 0);
+              if (name === 'eventsPerSec') return [fmtNum(numVal), 'Events/sec'];
+              if (name === 'latencyMs') return [`${numVal.toFixed(1)} ms`, 'Latency'];
+              return [numVal, name];
             }} />
             <Area yAxisId="left" type="monotone" dataKey="eventsPerSec" stroke="#00F5D4" fill="url(#throughputGrad)" strokeWidth={2} name="eventsPerSec" dot={false} />
             <Line yAxisId="right" type="monotone" dataKey="latencyMs" stroke="#FFB700" strokeWidth={1.5} dot={false} name="latencyMs" />

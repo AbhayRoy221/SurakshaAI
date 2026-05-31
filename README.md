@@ -27,7 +27,7 @@ List every major technology used:
 Step-by-step instructions:
 
 1. Clone the repo:
-   `git clone https://github.com/your-team/surakshaai`
+   `git clone https://github.com/AbhayRoy221/SurakshaAI`
 2. Install all dependencies:
    `npm run install:all`
 3. Install Python ML dependencies:
